@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbartoli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/15 13:35:18 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/08/20 17:44:07 by cbartoli         ###   ########.fr       */
+/*   Created: 2017/11/24 12:52:46 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/24 12:52:50 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+# include "libft.h"
 
 char	*ft_strstr(const char *str, const char *to_find)
 {

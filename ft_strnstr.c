@@ -1,4 +1,16 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 12:56:10 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/24 13:06:22 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include "libft.h" 
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
@@ -9,15 +21,15 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	i = 0;
 	j = 0;
 	k = 0;
+	if (!len)
+	       return (NULL);	
 	while (to_find[k])
 		k++;
-	if (k == 0 || len == 0)
+	if (!k)
 		return ((char *)str);
-	if (k > len)
-		k = len;
-	while (str[i] != '\0')
+	while (str[i] && len--)
 	{
-		while (to_find[j] == str[i + j])
+		while (to_find[j] == str[i + j] && (len - j) > 0)
 		{
 			if (j == k - 1)
 				return ((char *)str + i);
