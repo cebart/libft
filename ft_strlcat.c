@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 23:32:17 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/24 00:10:27 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/24 01:09:01 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,33 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
-	size_t	ldest;
+	char		*pdest;
+	const char	*psrc;
+	size_t		sz;
+	size_t		ldest;
 
-	j = 0;
-	i = 0;
-	ldest = ft_strlen(dest);
-	if(!size)
-		return (ldest + ft_strlen(src));
-	while (dest[j] != '\0')
-		j++;
-	size = size - (j + 1);
-	while (src[i] != '\0' && i < size)
+	pdest = dest;
+	psrc = src;
+	sz = size;
+	while (*pdest && sz)
 	{
-		dest[j] = src[i];
-		j++;
-		i++;
+		pdest++;
+		sz--;
 	}
-	dest[j] = src[i];
-	return (ldest + ft_strlen(src));
+	ldest = ft_strlen(dest) - ft_strlen(pdest);
+	sz = size - ldest;
+	if (!sz)
+		return (ldest + ft_strlen(src));
+	while (*psrc)
+	{
+		if (sz != 1)
+		{
+			*pdest = *psrc;
+			pdest++;
+			sz--;
+		}
+		psrc++;
+	}
+	*pdest = '\0';
+	return (ldest + (ft_strlen(src) - ft_strlen(psrc)));
 }
