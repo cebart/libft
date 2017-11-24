@@ -1,4 +1,16 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 12:47:40 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/24 12:49:22 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+# include "libft.h"
 
 char 	*ft_strrchr(const char *s, int c)
 {
@@ -11,5 +23,7 @@ char 	*ft_strrchr(const char *s, int c)
             r = (char *)s;
         s++;
     }
+    if (!c && !*s)
+	    r = (char *)s;
     return (r);
 }
