@@ -6,16 +6,16 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 14:32:52 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/24 14:40:36 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/27 12:33:57 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "libft.h"
 
-static char	*ft_stalloc(int n, int *l)
+static char	*ft_stalloc(long n, long *l)
 {
 	char 	*s;
-	int	nb;
+	long	nb;
 
 	nb = n;
 	while(nb)
@@ -35,25 +35,27 @@ static char	*ft_stalloc(int n, int *l)
 char 		*ft_itoa(int n)
 {
 	char 	*s;
-	int	l;
-	int	*ptrl;
-  	int     ne;
+	long	l;
+	long	*ptrl;
+  	long     ne;
+	long	n2;
 
+	n2 = n;
 	l = 0;
 	ne = 0;
 	ptrl = &l;
-	if(!(s = ft_stalloc(n, ptrl)))
+	if(!(s = ft_stalloc(n2, ptrl)))
 		return (NULL);
 	s[l--] = '\0';
-	if(n < 0)
+	if(n2 < 0)
 	{
 		ne = 1;
-		n = -n;
+		n2 = -n2;
 	}
-	while(n)
+	while(n2)
 	{
-		s[l] = (n % 10) + '0';
-		n = n / 10;
+		s[l] = (n2 % 10) + '0';
+		n2 = n2 / 10;
 		l--;
 	}
 	if(!*s)
