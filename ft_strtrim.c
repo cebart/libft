@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/27 11:17:09 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/27 11:36:38 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libft.h"
 
 static int 	ft_isspace(char c)
@@ -9,24 +21,26 @@ static int 	ft_isspace(char c)
 
 char 		*ft_strtrim(char const *s)
 {
-	unsigned int start;
-	unsigned int len;
-	char         *sr;
+	int	start;
+	int	len;
+	int	end;
+	char	*sr;
 
 	len = 0;
 	start = 0;
-	sr = (char *)s;
-	sr = sr + (ft_strlen(s) - 1);
-	while(ft_isspace(*sr))
+	end = (ft_strlen(s) - 1);
+	while(ft_isspace(s[end]))
 	{
 		len++;
-		sr--;
+		end--;
 	}
+	if(!(sr = ft_strnew(len)))
+		return (NULL);
+	if (end < 0)
+		return (sr);
 	while(ft_isspace(s[start]))
 		start++;
 	len = ft_strlen(s) - start - len;
-	if(!(sr = ft_strnew(len)))
-		return (NULL);
 	sr = ft_strsub(s, start, (size_t)len);
 	return (sr);
 }
