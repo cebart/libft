@@ -66,4 +66,5 @@ void 		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char 		*ft_strmap(char const *s, char (*f)(char));
 char 		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 t_list  	*ft_lstnew(void const *content, size_t content_size);
+void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 #endif
