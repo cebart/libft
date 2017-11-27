@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 14:32:52 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 12:33:57 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/27 12:56:50 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,16 @@ static char	*ft_stalloc(long n, long *l)
 		return (NULL);
 	return (s);
 }
-
+static char	*ft_strfill(long n2, long *l, char *s)
+{
+        while(n2)
+	{
+		s[*l] = (n2 % 10) + '0';
+		n2 = n2 / 10;
+		(*l)--;
+	}
+	return (s);
+}
 char 		*ft_itoa(int n)
 {
 	char 	*s;
@@ -52,12 +61,7 @@ char 		*ft_itoa(int n)
 		ne = 1;
 		n2 = -n2;
 	}
-	while(n2)
-	{
-		s[l] = (n2 % 10) + '0';
-		n2 = n2 / 10;
-		l--;
-	}
+	s = ft_strfill(n2, ptrl, s);
 	if(!*s)
         	*s = '0';
 	if(ne)

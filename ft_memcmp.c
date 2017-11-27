@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/27 12:59:50 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/27 13:00:49 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 
 int 	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -6,15 +18,15 @@ int 	ft_memcmp(const void *s1, const void *s2, size_t n)
 	
 	p1 = s1;
 	p2 = s2;
-    while(n--)
+	while(n--)
 	{
-        if( *p1 != *p2 )
-            return (*p1 - *p2);
-        else
+		if( *p1 != *p2 )
+			return (*p1 - *p2);
+		else
 		{
-            p1++;
+			p1++;
 			p2++;
 		}
 	}
-    return (0);
+	return (0);
 }
