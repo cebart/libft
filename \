@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 10:55:29 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 11:00:35 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/27 10:59:08 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char 	*ft_strmap(char const *s, char (*f)(char))
 
 	i = 0;
 	res = ft_strnew(ft_strlen(s) + 1);
-	while (s[i])
+	while (*s)
 	{
-		res[i] = ((*f)(s[i]));
+		res[i] = (*f)(s[i]);
 		i++;
 	}
 	res[i] = '\0';

@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 14:32:52 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/24 14:40:36 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libft.h"
 
 static char	*ft_stalloc(int n, int *l)
 {
 	char 	*s;
-	int		nb;
+	int	nb;
 
 	nb = n;
 	while(nb)
-    {
-        nb = nb / 10;
-        (*l)++;
-    }
-    if(!n)
-        *l = 1;
+	{
+        	nb = nb / 10;
+		(*l)++;
+	}
+	if(!n)
+        	*l = 1;
 	if(n < 0)
 		(*l)++;
 	if(!(s = ft_strnew((size_t)*l)))
@@ -23,30 +35,29 @@ static char	*ft_stalloc(int n, int *l)
 char 		*ft_itoa(int n)
 {
 	char 	*s;
-	int		l;
-	int		*ptrl;
-    int     ne;
+	int	l;
+	int	*ptrl;
+  	int     ne;
 
 	l = 0;
 	ne = 0;
 	ptrl = &l;
 	if(!(s = ft_stalloc(n, ptrl)))
 		return (NULL);
-	s[l] = '\0';
-	l--;
+	s[l--] = '\0';
 	if(n < 0)
-    {
-        ne = 1;
-        n = -n;
-    }
+	{
+		ne = 1;
+		n = -n;
+	}
 	while(n)
 	{
 		s[l] = (n % 10) + '0';
 		n = n / 10;
 		l--;
 	}
-    if(!*s)
-        *s = '0';
+	if(!*s)
+        	*s = '0';
 	if(ne)
 		s[l] = '-';
 	return (s);
