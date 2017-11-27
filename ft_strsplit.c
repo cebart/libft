@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/27 11:38:03 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/11/27 11:50:51 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "libft.h"
 
 static unsigned int		ft_countw(char const *s, char c)
@@ -66,16 +78,17 @@ static char 			**ft_tabfill(char const *s, char c, char **tab)
 	return (tab);
 }
 
-char 					**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	unsigned int 	wrds;
-	char			**tab;
+	char		**tab;
 
 	wrds = ft_countw(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * wrds + 1)) || !wrds)
 		return (NULL);
 	if (!(tab = ft_wrdsalloc(s, c, tab, wrds)))
-        return (NULL);
+        	return (NULL);
 	tab = ft_tabfill(s, c, tab);
+	tab[wrds + 1] = '\0';
 	return (tab);
 }
