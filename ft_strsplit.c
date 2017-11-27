@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 11:38:03 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 11:50:51 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/27 12:04:30 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ char				**ft_strsplit(char const *s, char c)
 	if (!(tab = ft_wrdsalloc(s, c, tab, wrds)))
         	return (NULL);
 	tab = ft_tabfill(s, c, tab);
-	tab[wrds + 1] = '\0';
+	tab[wrds] = (char *)'\0';
 	return (tab);
 }
