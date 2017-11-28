@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 11:38:03 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 12:20:51 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/11/28 16:48:02 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static unsigned int		ft_countw(char const *s, char c)
 {
-	unsigned int w;
+	int w;
 
 	w = 0;
 	while (*s)
@@ -29,10 +29,10 @@ static unsigned int		ft_countw(char const *s, char c)
 	return (w);
 }
 
-static char 			**ft_wrdsalloc(char const *s, char c, char **tab, unsigned int w)
+static char 			**ft_wrdsal(char *s, char c, char **tab, int w)
 {
-	size_t	        i;
-	unsigned int 	j;
+	int	i;
+	int 	j;
 
 	j = 0;
 	while (*s)
@@ -56,8 +56,8 @@ static char 			**ft_wrdsalloc(char const *s, char c, char **tab, unsigned int w)
 
 static char 			**ft_tabfill(char const *s, char c, char **tab)
 {
-	int	            i;
-	unsigned int 	j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (*s)
@@ -79,13 +79,13 @@ static char 			**ft_tabfill(char const *s, char c, char **tab)
 
 char				**ft_strsplit(char const *s, char c)
 {
-	unsigned int 	wrds;
+	int 		wrds;
 	char		**tab;
 
 	wrds = ft_countw(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * wrds + 1)))
 		return (NULL);
-	if (!(tab = ft_wrdsalloc(s, c, tab, wrds)))
+	if (!(tab = ft_wrdsal((char *)s, c, tab, wrds)))
         	return (NULL);
 	tab = ft_tabfill(s, c, tab);
 	tab[wrds] = (char *)'\0';
