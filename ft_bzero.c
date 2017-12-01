@@ -6,13 +6,13 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 18:37:00 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/23 18:38:19 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 18:55:52 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void 	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*m;
 
