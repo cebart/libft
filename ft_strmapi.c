@@ -6,15 +6,15 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 10:55:29 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 11:05:07 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 19:56:20 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char 		*res;
+	char		*res;
 	unsigned int	i;
 
 	i = 0;

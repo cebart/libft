@@ -6,19 +6,19 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 10:55:29 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 14:44:24 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 19:55:27 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-char 	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char 	*res;
+	char	*res;
 	int	i;
 
 	i = 0;
-	if(!(res = ft_strnew(ft_strlen(s) + 1)))
+	if (!(res = ft_strnew(ft_strlen(s) + 1)))
 		return (NULL);
 	while (s[i])
 	{
