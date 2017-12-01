@@ -6,11 +6,11 @@
 /*   By: cbartoli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 15:57:30 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/08/15 13:27:15 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 19:28:50 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {
