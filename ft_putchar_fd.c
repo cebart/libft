@@ -6,13 +6,13 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 13:03:55 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 13:04:04 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 19:19:45 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void 	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
