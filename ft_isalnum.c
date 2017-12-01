@@ -6,7 +6,7 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 12:57:29 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/27 12:57:35 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 14:42:53 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isalnum(int c)
 {
-	if(ft_isalpha(c) || ft_isdigit(c))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }

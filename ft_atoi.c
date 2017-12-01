@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/24 13:09:34 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/24 13:16:55 by cbartoli         ###   ########.fr       */
+/*   Created: 2017/12/01 14:40:25 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/12/01 14:41:43 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 static int	ft_is_negativ(char c)
 {
@@ -25,7 +25,7 @@ static int	ft_is_negativ(char c)
 static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
-		       	|| c == '\v' || c == '\f')
+			|| c == '\v' || c == '\f')
 		return (1);
 	return (0);
 }
