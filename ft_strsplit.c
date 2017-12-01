@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/27 11:38:03 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/28 16:48:02 by cbartoli         ###   ########.fr       */
+/*   Created: 2017/12/01 21:13:56 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/12/01 21:16:53 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 static unsigned int		ft_countw(char const *s, char c)
 {
@@ -29,10 +29,10 @@ static unsigned int		ft_countw(char const *s, char c)
 	return (w);
 }
 
-static char 			**ft_wrdsal(char *s, char c, char **tab, int w)
+static char			**ft_wrdsal(char *s, char c, char **tab, int w)
 {
 	int	i;
-	int 	j;
+	int	j;
 
 	j = 0;
 	while (*s)
@@ -45,16 +45,16 @@ static char 			**ft_wrdsal(char *s, char c, char **tab, int w)
 			s++;
 			i++;
 		}
-		if(!(tab[j] = ft_strnew(i + 1)))
-           		 return (NULL);
+		if (!(tab[j] = ft_strnew(i + 1)))
+			return (NULL);
 		j++;
 	}
-	if(j < w)
+	if (j < w)
 		tab[j] = ft_strnew(1);
 	return (tab);
 }
 
-static char 			**ft_tabfill(char const *s, char c, char **tab)
+static char			**ft_tabfill(char const *s, char c, char **tab)
 {
 	int	i;
 	int	j;
@@ -79,14 +79,14 @@ static char 			**ft_tabfill(char const *s, char c, char **tab)
 
 char				**ft_strsplit(char const *s, char c)
 {
-	int 		wrds;
-	char		**tab;
+	int	wrds;
+	char	**tab;
 
 	wrds = ft_countw(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * wrds + 1)))
 		return (NULL);
 	if (!(tab = ft_wrdsal((char *)s, c, tab, wrds)))
-        	return (NULL);
+		return (NULL);
 	tab = ft_tabfill(s, c, tab);
 	tab[wrds] = (char *)'\0';
 	return (tab);

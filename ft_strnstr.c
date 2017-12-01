@@ -6,11 +6,11 @@
 /*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/24 12:56:10 by cbartoli          #+#    #+#             */
-/*   Updated: 2017/11/24 13:06:22 by cbartoli         ###   ########.fr       */
+/*   Updated: 2017/12/01 21:12:37 by cbartoli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h" 
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	j = 0;
 	k = 0;
 	if (!len)
-	       return (NULL);	
+		return (NULL);
 	while (to_find[k])
 		k++;
 	if (!k)

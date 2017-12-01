@@ -1,12 +1,24 @@
-# include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cbartoli <cbartoli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/01 21:11:18 by cbartoli          #+#    #+#             */
+/*   Updated: 2017/12/01 21:11:33 by cbartoli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char *sr;
 
-	if(!(sr = ft_strnew(len + 1)))
+	if (!(sr = ft_strnew(len + 1)))
 		return (NULL);
-	while(start--)
+	while (start--)
 		s++;
 	sr = ft_strncpy(sr, s, len);
 	sr[len] = '\0';
